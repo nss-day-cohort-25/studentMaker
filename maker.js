@@ -1,9 +1,19 @@
+const studentBodyRef = document.querySelector("#studentBody")
+
 const studentDomBuilder = (gender) => {
+
+    let row = document.createElement("div")
+
 
     // Array of student objects
     StudentDatabase.students.forEach(
         currentStudent => {
             // Build the DOM components
+
+            if (row.childNodes.length % 3 === 0) {
+                studentBodyRef.appendChild(row)
+                row = document.createElement("div")
+            }
 
             if (gender === currentStudent.gender ||
                     typeof gender === "undefined") {
@@ -21,7 +31,7 @@ const studentDomBuilder = (gender) => {
                 studentSection.appendChild(studentBP)
 
                 // Append HTML representation of student to the DOM
-                studentBodyRef.appendChild(studentSection)
+                row.appendChild(studentSection)
             }
 
         }
@@ -31,4 +41,4 @@ const studentDomBuilder = (gender) => {
 }
 
 
-studentDomBuilder("M")
+studentDomBuilder()
