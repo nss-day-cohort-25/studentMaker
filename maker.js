@@ -1,7 +1,3 @@
-const studentBodyRef = document.querySelector("#studentBody")
-
-const StudentDatabase = JSON.parse(localStorage.getItem("StudentDatabase"))
-
 // Array of student objects
 StudentDatabase.students.forEach(
     currentStudent => {
