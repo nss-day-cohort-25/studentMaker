@@ -1,23 +1,34 @@
-// Array of student objects
-StudentDatabase.students.forEach(
-    currentStudent => {
-        // Build the DOM components
+const studentDomBuilder = (gender) => {
 
-        // Section first
-        const studentSection = document.createElement("section")
+    // Array of student objects
+    StudentDatabase.students.forEach(
+        currentStudent => {
+            // Build the DOM components
 
-        // h2 child component of section
-        const studentName = document.createElement("h2")
-        studentName.textContent = currentStudent.name
-        studentSection.appendChild(studentName)
+            if (gender === currentStudent.gender ||
+                    typeof gender === "undefined") {
+                // Section first
+                const studentSection = document.createElement("section")
 
-        // p child component of section
-        const studentBP = document.createElement("p")
-        studentBP.textContent = currentStudent.birthPlace
-        studentSection.appendChild(studentBP)
+                // h2 child component of section
+                const studentName = document.createElement("h2")
+                studentName.textContent = currentStudent.name
+                studentSection.appendChild(studentName)
 
-        // Append HTML representation of student to the DOM
-        studentBodyRef.appendChild(studentSection)
-    }
-)
+                // p child component of section
+                const studentBP = document.createElement("p")
+                studentBP.textContent = currentStudent.birthPlace
+                studentSection.appendChild(studentBP)
 
+                // Append HTML representation of student to the DOM
+                studentBodyRef.appendChild(studentSection)
+            }
+
+        }
+    )
+
+
+}
+
+
+studentDomBuilder("M")
