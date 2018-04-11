@@ -33,8 +33,7 @@ const studentDomBuilder = (gender) => {
                 as the argument value. If no value was provided,
                 display all students.
             */
-            if (gender === currentStudent.gender ||
-                    typeof gender === "undefined") {
+            if (!gender || gender === currentStudent.gender) {
 
                 // Section first
                 const studentSection = document.createElement("span")
