@@ -58,6 +58,12 @@ const studentDomBuilder = (gender) => {
                 studentBP.textContent = currentStudent.birthPlace
                 studentSection.appendChild(studentBP)
 
+                // p child component of section
+                const studentGender = document.createElement("p")
+                studentGender.classList = "student__gender"
+                studentGender.textContent = currentStudent.gender
+                studentSection.appendChild(studentGender)
+
                 // Append HTML representation of student to the DOM
                 row.appendChild(studentSection)
             }
