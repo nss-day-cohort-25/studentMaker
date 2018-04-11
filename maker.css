@@ -6,6 +6,14 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.student__title {
+    color: tomato;
+}
+
+.student__birthplace {
+    color: #0D355A;
+}
+
 .bordered {
     border: 1px  groove black;
 }

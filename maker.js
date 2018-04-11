@@ -42,11 +42,13 @@ const studentDomBuilder = (gender) => {
 
                 // h2 child component of section
                 const studentName = document.createElement("h2")
+                studentName.classList = "student__title"
                 studentName.textContent = currentStudent.name
                 studentSection.appendChild(studentName)
 
                 // p child component of section
                 const studentBP = document.createElement("p")
+                studentBP.classList = "student__birthplace"
                 studentBP.textContent = currentStudent.birthPlace
                 studentSection.appendChild(studentBP)
 
