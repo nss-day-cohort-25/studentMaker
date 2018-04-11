@@ -39,6 +39,7 @@ const studentDomBuilder = (gender) => {
                 const studentSection = document.createElement("span")
                 studentSection.classList = "bordered student"
 
+                // Apply different class based on student gender
                 if (currentStudent.gender === "M") {
                     studentSection.classList += " male"
                 } else if (currentStudent.gender === "F") {
