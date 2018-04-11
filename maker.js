@@ -15,14 +15,14 @@ const studentDomBuilder = (gender) => {
         retrieved from localStorage in database.js
     */
     StudentDatabase.students.forEach(
-        (currentStudent, index) => {
+        (currentStudent, monkeyButt) => {
 
             /*
                 When three student components have been added to the
                 parent div, append the current div to the top-level
                 article and create a new div
             */
-            if (index !== 0 && row.childNodes.length % 3 === 0) {
+            if (monkeyButt !== 0 && row.childNodes.length % 3 === 0) {
                 studentBodyRef.appendChild(row)
                 row = document.createElement("div")
                 row.className = "studentRow"
@@ -38,6 +38,12 @@ const studentDomBuilder = (gender) => {
                 // Section first
                 const studentSection = document.createElement("span")
                 studentSection.classList = "bordered student"
+
+                if (currentStudent.gender === "M") {
+                    studentSection.classList += " male"
+                } else if (currentStudent.gender === "F") {
+                    studentSection.classList += " female"
+                }
 
                 // h2 child component of section
                 const studentName = document.createElement("h2")
@@ -58,7 +64,7 @@ const studentDomBuilder = (gender) => {
     )
 
     // Just in case there are an exact multiple of 3 students, add the last row
-    if (row.childNodes.length % 3 === 0) {
+    if (row.childNodes.length) {
         studentBodyRef.appendChild(row)
     }
 

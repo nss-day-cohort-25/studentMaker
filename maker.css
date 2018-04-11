@@ -21,3 +21,11 @@
 .studentRow {
     padding: 10px 0;
 }
+
+.male {
+    border: 2px solid goldenrod
+}
+
+.female {
+    border: 2px solid purple
+}
