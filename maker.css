@@ -1,4 +1,15 @@
-section {
-    border: 1px dotted black;
-    float: left;
+.student {
+    display: inline-block;
+    margin: 0 10px;
+    min-width: 25%;
+    padding: 5px 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.bordered {
+    border: 1px  groove black;
+}
+
+.studentRow {
+    padding: 10px 0;
 }
