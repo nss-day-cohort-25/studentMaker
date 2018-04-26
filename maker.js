@@ -1,10 +1,11 @@
 const studentBodyRef = document.querySelector("#studentBody")
+const fragment = document.createDocumentFragment()
 
 /*
     This function's reponsibility is to generate DOM components
     that are HTML representations of the student data
 */
-const studentDomBuilder = (gender) => {
+const studentDomBuilder = (filterProperty, filterValue) => {
 
     // Create a block element that will hold three student components
     let row = document.createElement("div")
@@ -23,7 +24,7 @@ const studentDomBuilder = (gender) => {
                 article and create a new div
             */
             if (monkeyButt !== 0 && row.childNodes.length % 3 === 0) {
-                studentBodyRef.appendChild(row)
+                fragment.appendChild(row)
                 row = document.createElement("div")
                 row.className = "studentRow"
             }
@@ -33,7 +34,7 @@ const studentDomBuilder = (gender) => {
                 as the argument value. If no value was provided,
                 display all students.
             */
-            if (!gender || gender === currentStudent.gender) {
+            if (filterValue === currentStudent[filterProperty]) {
 
                 // Section first
                 const studentSection = document.createElement("span")
@@ -72,8 +73,10 @@ const studentDomBuilder = (gender) => {
 
     // Just in case there are an exact multiple of 3 students, add the last row
     if (row.childNodes.length) {
-        studentBodyRef.appendChild(row)
+        fragment.appendChild(row)
     }
+
+    studentBodyRef.appendChild(fragment)
 
 }
 
